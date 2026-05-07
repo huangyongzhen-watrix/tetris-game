@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>简易俄罗斯方块</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="game-area" aria-label="俄罗斯方块游戏区">
+        <canvas id="board" width="300" height="600" aria-label="游戏棋盘"></canvas>
+      </section>
+
+      <aside class="side-panel" aria-label="游戏信息">
+        <div class="brand">
+          <h1>俄罗斯方块</h1>
+          <button id="restartBtn" type="button">重新开始</button>
+        </div>
+
+        <div class="status-panel" id="overlay" hidden>
+          <h2 id="overlayTitle">暂停</h2>
+          <p id="overlayText">按 P 继续</p>
+        </div>
+
+        <div class="stats-grid">
+          <div>
+            <span>分数</span>
+            <strong id="score">0</strong>
+          </div>
+          <div>
+            <span>消行</span>
+            <strong id="lines">0</strong>
+          </div>
+          <div>
+            <span>等级</span>
+            <strong id="level">1</strong>
+          </div>
+        </div>
+
+        <div class="preview-block">
+          <span>下一个</span>
+          <canvas id="next" width="120" height="120" aria-label="下一个方块"></canvas>
+        </div>
+
+        <div class="controls">
+          <button data-action="left" type="button" aria-label="左移">←</button>
+          <button data-action="rotate" type="button" aria-label="旋转">↻</button>
+          <button data-action="right" type="button" aria-label="右移">→</button>
+          <button data-action="down" type="button" aria-label="加速下落">↓</button>
+          <button data-action="drop" type="button" aria-label="直接落下">⤓</button>
+          <button data-action="pause" type="button" aria-label="暂停">Ⅱ</button>
+        </div>
+
+        <p class="keys">方向键移动，↑ 旋转，空格硬降，P 暂停</p>
+      </aside>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
